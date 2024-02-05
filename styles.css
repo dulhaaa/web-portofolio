@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+/* heading */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Prata&display=swap');
+
+:root {
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Prata', serif;
+  --primary-color: #0a0a0b;
+  --secondary-color: #2e3038;
+  --accent-color: #fbe850;
+  --text-color: white;
+  --text-color-sec: #b3b2b2;
+  --box-spacing-body: 10rem;
+  --box-spacing-tab-view: 3rem;
+  --box-spacing-mob-view: 1rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  margin-block-start: 1em;
+}
+
+body :is(h1, h2) {
+  font-family: var(--font-heading);
+}
+
+body :is(.header-brand, .description, .brand-logo, .card) {
+  margin-inline: var(--box-spacing-body);
+}
+
+.header-brand {
+  display: grid;
+  grid-template-columns: auto 2fr auto;
+  place-items: center;
+}
+
+.header-brand > h1 {
+  grid-column: 1 /2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: calc(0.5em + 1vw);
+}
+
+.header-brand > nav ul {
+  list-style: none;
+  grid-column: 2 / 3;
+  grid-template-columns: repeat(4, 100px);
+  display: grid;
+  grid-auto-flow: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.header-brand > nav ul a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color-sec);
+  font-weight: 400;
+  font-family: var(--font-body);
+}
+
+.header-brand > button {
+  grid-column: 3 / -1;
+  background-color: var(--accent-color);
+  padding-block: 1em;
+  padding-inline: 2em;
+  border-radius: 5px;
+  font-family: var(--font-heading);
+  font-size: calc(0.1em + 1vw);
+  cursor: pointer;
+}
+
+.header-brand > button:active {
+  border-style: outset;
+  transform: scale(0.99);
+  box-shadow: none;
+}
+
+.header-brand .menu-toggle {
+  display: none;
+}
+
+/* Description */
+.description {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  place-items: start;
+  position: relative;
+  margin-block: 5rem;
+}
+
+.description .description-item h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.description .description-item p {
+  font-family: var(--font-body);
+  font-size: 0.9em;
+  color: var(--text-color-sec);
+}
+
+/* brand logo */
+.brand-logo {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+/* card */
+.card {
+  display: grid;
+  margin-block-start: 5rem;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 5rem;
+  position: relative;
+}
+
+.card-item > .card-header h1 {
+  font-weight: 300;
+  font-size: 2em;
+}
+
+.card-item > .card-header .arrow {
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  filter: invert(98%) sepia(3%) saturate(2%) hue-rotate(103deg) brightness(111%)
+    contrast(100%);
+  padding-block: 5px;
+  padding-inline-start: 2px;
+}
+
+.card-item > .card-image img {
+  width: 100%;
+}
+
+.card-item > .card-text {
+  font-family: var(--font-body);
+  font-size: 1em;
+  line-height: 1.5;
+  color: var(--text-color-sec);
+  margin-block-start: -1em;
+}
+
+/* Information */
+.information {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 5rem;
+  background: var(--secondary-color);
+  margin-block: 5rem;
+  padding-block: 5rem;
+  padding-inline: 10rem;
+  min-height: 60vh;
+}
+
+.information-item.item-1 h2 {
+  font-family: var(--font-heading);
+  font-size: 2em;
+  font-weight: 200;
+}
+
+.information-item.item-1 p {
+  font-family: var(--font-body);
+  line-height: 1.9;
+  font-size: 1.1em;
+  color: var(--text-color);
+}
+
+.information-item.item-2 {
+  font-family: var(--font-body);
+  line-height: 2;
+  font-size: 1.1em;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 0.45fr;
+  grid-template-rows: 0.5fr 0.5fr 60px;
+  margin-inline-start: var(--box-spacing-body);
+}
+
+.contact > h2 {
+  font-family: var(--font-heading);
+  font-size: 2em;
+  margin-block: 0;
+}
+
+.contact > p {
+  font-family: var(--font-body);
+  font-size: 0.9em;
+  margin-block-start: 0;
+  max-width: 430px;
+}
+
+.contact > button {
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  font-family: var(--font-heading);
+  font-size: calc(0.1em + 1vw);
+  cursor: pointer;
+  width: 200px;
+}
+
+.header-brand > button:active {
+  border-style: outset;
+  transform: scale(0.99);
+  box-shadow: none;
+}
+
+/* footer */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding-inline: 10rem;
+  background: var(--secondary-color);
+  margin-block-start: 5rem;
+  min-height: 6vh;
+}
+
+.footer .footer-item {
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.footer .footer-image {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* breakpoint responsive */
+/* tablet view */
+
+@media screen and (min-width: 22.5em) and (max-width: 47em) {
+  body :is(.header-brand, .description, .brand-logo, .card, .contact) {
+    margin-inline: var(--box-spacing-mob-view);
+  }
+
+  .header-brand > nav ul {
+    display: none;
+  }
+
+  .header-brand > button {
+    display: none;
+  }
+
+  .header-brand {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    position: relative;
+  }
+
+  .header-brand > h1 {
+    justify-self: start;
+    grid-column: 1 /2;
+  }
+
+  .header-brand .menu-toggle {
+    display: flex;
+    position: absolute;
+    grid-column: 2 / 3;
+    justify-self: end;
+  }
+
+  .header-brand .menu-toggle img.toggle-humb:active {
+    border-style: outset;
+    transform: scale(0.99);
+    box-shadow: none;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .description .description-item h1 {
+    font-size: 1.7em;
+    margin-block-start: -2rem;
+  }
+
+  .brand-logo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'walmart jpmorgan'
+      'visa tinder'
+      'samsung verizon';
+    justify-items: center;
+    align-content: space-evenly;
+    gap: 1rem;
+  }
+
+  .brand-logo img:nth-child(1) {
+    grid-area: walmart;
+    justify-self: end;
+  }
+
+  .brand-logo img:nth-child(2) {
+    grid-area: jpmorgan;
+    justify-self: start;
+  }
+
+  .brand-logo img:nth-child(3) {
+    grid-area: visa;
+    justify-self: end;
+  }
+
+  .brand-logo img:nth-child(4) {
+    grid-area: tinder;
+    justify-self: start;
+  }
+  .brand-logo img:nth-child(5) {
+    grid-area: samsung;
+    justify-self: end;
+  }
+  .brand-logo img:nth-child(6) {
+    grid-area: verizon;
+    justify-self: start;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .information {
+    display: flex;
+    flex-direction: column;
+    padding-inline: var(--box-spacing-mob-view);
+  }
+
+  .information-item.item-2 {
+    margin-block-start: -2rem;
+  }
+
+  .information .information-item :is(p) {
+    color: #97979a;
+    font-weight: 500;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact > button {
+    min-height: 4rem;
+    font-size: 1em;
+  }
+
+  .footer {
+    padding-inline: 2rem;
+    height: 10vh;
+  }
+}
+
+/* talet view */
+
+@media screen and (min-width: 48em) and (max-width: 61em) {
+  body :is(.header-brand, .description, .brand-logo, .card) {
+    margin-inline: var(--box-spacing-tab-view);
+  }
+
+  .header-brand {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    position: relative;
+  }
+
+  .header-brand > h1 {
+    justify-self: start;
+    grid-column: 1 /2;
+  }
+
+  .header-brand .menu-toggle {
+    display: flex;
+    position: absolute;
+    grid-column: 2 / 3;
+    justify-self: end;
+  }
+
+  .header-brand .menu-toggle img.toggle-humb:active {
+    border-style: outset;
+    transform: scale(0.99);
+    box-shadow: none;
+  }
+
+  .header-brand > nav ul {
+    display: none;
+  }
+
+  .header-brand > button {
+    display: none;
+  }
+
+  /* description */
+  .description {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100vw;
+    margin-block-start: -1.5rem;
+  }
+
+  .description-item p {
+    margin-block-start: -2rem;
+  }
+
+  /* brand logo */
+  .brand-logo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      'walmart jpmorgan visa'
+      'tinder samsung verizon';
+    justify-items: center;
+    align-content: space-evenly;
+    row-gap: 2rem;
+  }
+
+  .brand-logo img:nth-child(1) {
+    grid-area: walmart;
+    justify-self: end;
+  }
+
+  .brand-logo img:nth-child(2) {
+    grid-area: jpmorgan;
+  }
+
+  .brand-logo img:nth-child(3) {
+    grid-area: visa;
+    justify-self: start;
+  }
+
+  .brand-logo img:nth-child(4) {
+    grid-area: tinder;
+  }
+  .brand-logo img:nth-child(5) {
+    grid-area: samsung;
+  }
+  .brand-logo img:nth-child(6) {
+    grid-area: verizon;
+  }
+
+  /* card */
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card .card-header {
+    font-size: 2em;
+  }
+
+  .card .card-text {
+    font-size: 1.5em;
+    margin-block-start: 1rem;
+  }
+
+  .card .card-item .card-header .arrow {
+    width: 1em;
+    padding-block-start: 1rem;
+  }
+
+  .information {
+    display: flex;
+    flex-direction: column;
+    padding-inline: var(--box-spacing-tab-view);
+  }
+
+  .information-item.item-1 h2 {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+  .contact {
+    margin-inline: var(--box-spacing-tab-view);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact > button {
+    min-height: 4rem;
+    font-size: 1em;
+  }
+
+  .footer {
+    padding-inline: var(--box-spacing-tab-view);
+  }
+}
